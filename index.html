@@ -1,354 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Stationery Hub — Est. 2026</title>
-<meta name="description" content="স্কুল, কলেজ, অফিসের সব রকম স্টেশনারি দ্রব্য retail এবং wholesale রেট-এ পাওয়া যায়। Est. 2026.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Stationery Hub — Est. 2026 | Kolkata's Finest Stationery Store</title>
+<meta name="description" content="The Stationery Hub — স্কুল, কলেজ, অফিস সব রকম স্টেশনারি। Retail & Wholesale rates. FC-68 Narayantala West, Baguiati, Kolkata 700059."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #1a1209;
+    --paper: #fdf8f0;
+    --cream: #f5edd8;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d97a;
+    --rust: #8b3a0f;
+    --sage: #5a6e4e;
+    --mid: #6b5c3e;
+    --light-mid: #9e8c6e;
+    --border: #ddd0b3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+  /* TICKER */
+  .ticker-wrap { background: var(--ink); color: var(--gold-pale); font-size: 12px; font-family: 'Lato', sans-serif; letter-spacing: 1.5px; text-transform: uppercase; overflow: hidden; white-space: nowrap; padding: 8px 0; }
+  .ticker-track { display: inline-block; animation: ticker 32s linear infinite; }
+  .ticker-track span { margin: 0 36px; }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 2px solid var(--ink); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .nav-logo img { height: 46px; width: 46px; object-fit: contain; }
+  .nav-logo-text { line-height: 1.2; }
+  .nav-logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; }
+  .nav-logo-text span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  .nav-links a { text-decoration: none; color: var(--ink); font-weight: 700; transition: color 0.2s; position: relative; padding-bottom: 3px; }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--gold); transition: width 0.25s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta { background: var(--ink); color: var(--paper) !important; padding: 8px 20px !important; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
+
+  /* HERO */
+  .hero { min-height: calc(100vh - 108px); display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 60px 80px; gap: 60px; position: relative; overflow: hidden; background: var(--paper); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 600px 500px at 75% 50%, rgba(184,134,11,0.07) 0%, transparent 70%), repeating-linear-gradient(0deg, transparent, transparent 39px, var(--border) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(184,134,11,0.06) 40px); pointer-events: none; }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
+  .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--gold); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4.5vw, 58px); font-weight: 900; line-height: 1.15; color: var(--ink); margin-bottom: 18px; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-bengali { font-family: 'Noto Sans Bengali', sans-serif; font-size: 16px; color: var(--mid); margin-bottom: 16px; font-weight: 600; }
+  .hero-sub { font-size: 16px; line-height: 1.8; color: var(--mid); max-width: 440px; margin-bottom: 36px; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; padding: 14px 32px; background: var(--ink); color: var(--paper); font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 2px solid var(--ink); transition: all 0.25s; }
+  .btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .btn-outline { display: inline-block; padding: 14px 32px; background: transparent; color: var(--ink); font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 2px solid var(--ink); transition: all 0.25s; }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+  .hero-right { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; }
+  .hero-logo-wrap { position: relative; width: 340px; height: 340px; }
+  .hero-logo-bg { position: absolute; inset: 0; border: 2px solid var(--border); transform: rotate(6deg); }
+  .hero-logo-bg2 { position: absolute; inset: 10px; border: 1px solid var(--gold); opacity: 0.4; transform: rotate(-3deg); }
+  .hero-logo-inner { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--cream); gap: 16px; }
+  .hero-logo-inner img { width: 160px; height: 160px; object-fit: contain; }
+  .hero-logo-inner p { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--mid); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* MARQUEE */
+  .marquee-strip { background: var(--ink); color: var(--gold-pale); padding: 12px 0; overflow: hidden; white-space: nowrap; }
+  .marquee-inner { display: inline-block; animation: ticker 38s linear infinite; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+  .marquee-inner span { margin: 0 28px; }
+  .marquee-inner .dot { color: var(--gold); margin: 0 8px; }
+
+  /* SECTION COMMONS */
+  section { padding: 90px 80px; }
+  .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 12px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub { font-size: 16px; color: var(--mid); line-height: 1.8; max-width: 560px; margin-bottom: 50px; }
+
+  /* CATEGORIES */
+  #categories { background: var(--cream); }
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .cat-card { background: var(--paper); border: 1px solid var(--border); padding: 28px 22px; transition: all 0.25s; cursor: pointer; position: relative; overflow: hidden; }
+  .cat-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--gold); transition: width 0.3s; }
+  .cat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+  .cat-card:hover::before { width: 100%; }
+  .cat-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .cat-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+  .cat-desc { font-size: 13px; color: var(--light-mid); line-height: 1.6; }
+
+  /* PRODUCTS */
+  #products { background: var(--paper); }
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .product-card { border: 1px solid var(--border); background: var(--paper); overflow: hidden; transition: all 0.25s; }
+  .product-card:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.1); transform: translateY(-3px); }
+  .product-card-top { background: var(--cream); padding: 32px 24px 24px; border-bottom: 1px solid var(--border); position: relative; }
+  .product-badge { position: absolute; top: 16px; right: 16px; background: var(--ink); color: var(--gold-pale); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; padding: 4px 10px; }
+  .product-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .product-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .product-category { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .product-card-body { padding: 20px 24px 24px; }
+  .product-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .btn-enquire { display: inline-block; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: all 0.2s; }
+  .btn-enquire:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* WHY US */
+  #why { background: var(--ink); color: var(--paper); }
+  #why .section-title { color: var(--paper); }
+  #why .section-sub { color: rgba(255,255,255,0.6); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 60px; }
+  .why-item { padding: 40px 36px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); transition: background 0.2s; }
+  .why-item:hover { background: rgba(184,134,11,0.08); }
+  .why-item:nth-child(2n) { border-right: none; }
+  .why-icon { font-size: 26px; margin-bottom: 14px; display: block; }
+  .why-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--gold-pale); margin-bottom: 10px; }
+  .why-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+  .stat-item { padding: 32px 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--gold-pale); display: block; line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+  /* PROMISE */
+  #promise { background: var(--cream); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .promise-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .promise-bengali { font-family: 'Noto Sans Bengali', sans-serif; font-size: 15px; color: var(--mid); line-height: 1.9; margin-bottom: 28px; }
+  .promise-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .promise-tag { background: var(--ink); color: var(--gold-pale); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; font-weight: 700; }
+  .promise-right { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .promise-card { background: var(--paper); border: 1px solid var(--border); padding: 20px 18px; text-align: center; }
+  .promise-card-icon { font-size: 22px; margin-bottom: 8px; display: block; }
+  .promise-card-text { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: var(--mid); }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--paper); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-card { border: 1px solid var(--border); padding: 32px 28px; position: relative; transition: all 0.25s; }
+  .testi-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--gold); }
+  .testi-quote { font-family: 'Playfair Display', serif; font-size: 64px; line-height: 0.6; color: var(--gold); opacity: 0.3; margin-bottom: 12px; display: block; }
+  .testi-text { font-size: 15px; line-height: 1.75; color: var(--mid); margin-bottom: 24px; font-style: italic; }
+  .testi-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 42px; height: 42px; background: var(--ink); color: var(--gold-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+  .testi-name { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .testi-role { font-size: 12px; color: var(--light-mid); }
+
+  /* CONTACT */
+  #contact { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+  .contact-info-cards { display: flex; flex-direction: column; gap: 16px; }
+  .contact-card { background: var(--paper); border: 1px solid var(--border); padding: 22px 24px; display: flex; gap: 16px; align-items: flex-start; transition: border-color 0.2s; }
+  .contact-card:hover { border-color: var(--gold); }
+  .contact-card-icon { font-size: 22px; flex-shrink: 0; }
+  .contact-card-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 4px; }
+  .contact-card-val { font-size: 14px; color: var(--ink); line-height: 1.7; font-weight: 600; }
+  .contact-card-sub { font-size: 12px; color: var(--light-mid); }
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; padding: 14px 28px; text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 20px; transition: all 0.2s; }
+  .whatsapp-btn:hover { background: #1ebe5c; transform: translateY(-2px); }
+  .contact-form { background: var(--paper); border: 1px solid var(--border); padding: 40px; }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 28px; color: var(--ink); }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: var(--mid); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); background: var(--cream); font-family: 'Lato', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--paper); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit { width: 100%; padding: 15px; background: var(--ink); color: var(--paper); border: none; cursor: pointer; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all 0.25s; }
+  .form-submit:hover { background: var(--gold); color: var(--ink); }
+
+  /* FOOTER */
+  footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 60px 80px 32px; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 48px; }
+  .footer-brand img { height: 50px; width: 50px; object-fit: contain; margin-bottom: 14px; filter: brightness(0) invert(1); opacity: 0.7; }
+  .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; font-weight: 700; margin-bottom: 4px; }
+  .footer-brand-est { font-size: 11px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+  .footer-brand-desc { font-size: 13px; line-height: 1.75; }
+  .footer-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { text-decoration: none; color: rgba(255,255,255,0.55); font-size: 13px; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold-pale); }
+  .footer-social { display: flex; gap: 12px; margin-bottom: 16px; }
+  .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; font-weight: 700; transition: all 0.2s; }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+  .footer-bottom span { color: rgba(255,255,255,0.35); }
+  .footer-bottom .heart { color: var(--gold); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    section { padding: 70px 40px; }
+    nav { padding: 0 24px; }
+    .hero { padding: 50px 40px; gap: 40px; }
+    footer { padding: 50px 40px 28px; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
+  }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 40px 24px; }
+    .hero-right { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .promise-inner { grid-template-columns: 1fr; gap: 40px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    section { padding: 60px 24px; }
+    footer { padding: 40px 24px 24px; }
+    .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+</style>
 </head>
 <body>
 
-<!-- PROMO BAR -->
-<div class="promo">
-  <p>🎉 <strong>Grand Opening!</strong> — স্কুল, কলেজ, অফিস সব রকম স্টেশনারি &nbsp;|&nbsp; Retail &amp; Wholesale রেট-এ পাওয়া যায় &nbsp;|&nbsp; <strong>Est. 2026</strong></p>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>🎉 Grand Opening</span>
+    <span>✦</span>
+    <span>স্কুল, কলেজ, অফিস সব রকম স্টেশনারি</span>
+    <span>✦</span>
+    <span>Retail &amp; Wholesale Rates Available</span>
+    <span>✦</span>
+    <span>FC-68 Narayantala West, Baguiati, Kolkata 700059</span>
+    <span>✦</span>
+    <span>📞 +91 98755 37992</span>
+    <span>✦</span>
+    <span>Mon–Sat 9am–8pm &nbsp;|&nbsp; Sun 10am–6pm</span>
+    <span>✦</span>
+    <span>🎉 Grand Opening</span>
+    <span>✦</span>
+    <span>স্কুল, কলেজ, অফিস সব রকম স্টেশনারি</span>
+    <span>✦</span>
+    <span>Retail &amp; Wholesale Rates Available</span>
+    <span>✦</span>
+    <span>FC-68 Narayantala West, Baguiati, Kolkata 700059</span>
+    <span>✦</span>
+    <span>📞 +91 98755 37992</span>
+    <span>✦</span>
+    <span>Mon–Sat 9am–8pm &nbsp;|&nbsp; Sun 10am–6pm</span>
+    <span>✦</span>
+  </div>
 </div>
 
 <!-- NAV -->
-<nav id="navbar">
+<nav id="home">
   <a href="#home" class="nav-logo">
-    <img src="images/logo.png" alt="The Stationery Hub">
+    <img src="https://anweshatitly.github.io/thestationeryhub1/images/logo.png" alt="The Stationery Hub logo"/>
     <div class="nav-logo-text">
-      <span>The Stationery Hub</span>
-      <span>Est. 2026</span>
+      <strong>The Stationery Hub</strong>
+      <span>Est. 2026 · Kolkata</span>
     </div>
   </a>
-  <ul class="nav-links" id="navLinks">
+  <ul class="nav-links">
     <li><a href="#categories">Categories</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#why">About</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact" class="nav-cta">Contact Us</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Est. 2026</div>
-    <h1>Where Every<br><em>Story Begins</em><br>on Paper</h1>
-    <p class="hero-sub">স্কুল, কলেজ, অফিস — সব রকম স্টেশনারি</p>
-    <p class="hero-desc">From the first day of school to the last page of your journal — we carry the finest pens, notebooks, art supplies and office essentials. Available at retail &amp; wholesale rates.</p>
-    <div class="hero-actions">
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Est. 2026 &nbsp;·&nbsp; Kolkata</div>
+    <h1>Where Every <em>Story Begins</em><br/>on Paper</h1>
+    <p class="hero-bengali">স্কুল, কলেজ, অফিস — সব রকম স্টেশনারি</p>
+    <p class="hero-sub">From the first day of school to the last page of your journal — we carry the finest pens, notebooks, art supplies and office essentials. Available at retail &amp; wholesale rates.</p>
+    <div class="hero-btns">
       <a href="#products" class="btn-primary">Explore Products →</a>
       <a href="#contact" class="btn-outline">Contact Us</a>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-badge-wrap">
-      <div class="hero-badge-ring"></div>
-      <div class="hero-badge-ring2"></div>
-      <img src="images/logo.png" alt="The Stationery Hub">
+  <div class="hero-right">
+    <div class="hero-logo-wrap">
+      <div class="hero-logo-bg"></div>
+      <div class="hero-logo-bg2"></div>
+      <div class="hero-logo-inner">
+        <img src="https://anweshatitly.github.io/thestationeryhub1/images/logo.png" alt="The Stationery Hub"/>
+        <p>Est. 2026</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-strip">
-  <div class="marquee-track">
-    <span class="marquee-item">Premium Notebooks <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Fine Writing Instruments <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Art Supplies <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">School Essentials <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Office Stationery <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Craft Supplies <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Geometry Sets <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Retail &amp; Wholesale <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Premium Notebooks <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Fine Writing Instruments <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Art Supplies <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">School Essentials <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Office Stationery <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Craft Supplies <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Geometry Sets <span class="marquee-dot">✦</span></span>
-    <span class="marquee-item">Retail &amp; Wholesale <span class="marquee-dot">✦</span></span>
+  <div class="marquee-inner">
+    <span>Premium Notebooks</span><span class="dot">✦</span>
+    <span>Fine Writing Instruments</span><span class="dot">✦</span>
+    <span>Art Supplies</span><span class="dot">✦</span>
+    <span>School Essentials</span><span class="dot">✦</span>
+    <span>Office Stationery</span><span class="dot">✦</span>
+    <span>Craft Supplies</span><span class="dot">✦</span>
+    <span>Geometry Sets</span><span class="dot">✦</span>
+    <span>Retail &amp; Wholesale</span><span class="dot">✦</span>
+    <span>Premium Notebooks</span><span class="dot">✦</span>
+    <span>Fine Writing Instruments</span><span class="dot">✦</span>
+    <span>Art Supplies</span><span class="dot">✦</span>
+    <span>School Essentials</span><span class="dot">✦</span>
+    <span>Office Stationery</span><span class="dot">✦</span>
+    <span>Craft Supplies</span><span class="dot">✦</span>
+    <span>Geometry Sets</span><span class="dot">✦</span>
+    <span>Retail &amp; Wholesale</span><span class="dot">✦</span>
   </div>
 </div>
 
 <!-- CATEGORIES -->
-<section class="categories" id="categories">
-  <div class="categories-header">
-    <span class="section-label">Browse by Category</span>
-    <h2 class="section-title">Find What You <em>Need</em></h2>
-    <p class="section-desc">Carefully curated for students, artists, teachers, offices and everyone who loves good stationery.</p>
-  </div>
+<section id="categories">
+  <p class="section-label">Browse by Category</p>
+  <h2 class="section-title">Find What You <em>Need</em></h2>
+  <p class="section-sub">Carefully curated for students, artists, teachers, offices and everyone who loves good stationery.</p>
   <div class="cat-grid">
-
-    <div class="cat-card">
-      <span class="cat-icon">📓</span>
-      <p class="cat-name">Notebooks &amp; Diaries</p>
-      <p class="cat-desc">Ruled, dotted, blank &amp; hardbound journals for every kind of writer.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">✒️</span>
-      <p class="cat-name">Pens &amp; Pencils</p>
-      <p class="cat-desc">Ballpoint, gel, fountain pens, fine liners &amp; sketch pencils.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">🎨</span>
-      <p class="cat-name">Art Supplies</p>
-      <p class="cat-desc">Watercolors, sketch pads, markers, pastels &amp; craft kits.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">🎒</span>
-      <p class="cat-name">School Essentials</p>
-      <p class="cat-desc">Geometry boxes, color pencils, erasers, sharpeners &amp; more.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">🗂️</span>
-      <p class="cat-name">Office Stationery</p>
-      <p class="cat-desc">Files, binders, sticky notes, staplers &amp; desk organisers.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">🖊️</span>
-      <p class="cat-name">Markers &amp; Highlighters</p>
-      <p class="cat-desc">Whiteboard, permanent &amp; neon highlighters in every color.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">✂️</span>
-      <p class="cat-name">Craft &amp; DIY</p>
-      <p class="cat-desc">Scrapbooking, washi tape, stickers, stamps &amp; glue.</p>
-    </div>
-
-    <div class="cat-card">
-      <span class="cat-icon">📐</span>
-      <p class="cat-name">Geometry &amp; Math</p>
-      <p class="cat-desc">Geometry boxes, compasses, set squares, protractors &amp; rulers.</p>
-    </div>
-
+    <div class="cat-card"><span class="cat-icon">📓</span><div class="cat-name">Notebooks &amp; Diaries</div><div class="cat-desc">Ruled, dotted, blank &amp; hardbound journals for every kind of writer.</div></div>
+    <div class="cat-card"><span class="cat-icon">✒️</span><div class="cat-name">Pens &amp; Pencils</div><div class="cat-desc">Ballpoint, gel, fountain pens, fine liners &amp; sketch pencils.</div></div>
+    <div class="cat-card"><span class="cat-icon">🎨</span><div class="cat-name">Art Supplies</div><div class="cat-desc">Watercolors, sketch pads, markers, pastels &amp; craft kits.</div></div>
+    <div class="cat-card"><span class="cat-icon">🎒</span><div class="cat-name">School Essentials</div><div class="cat-desc">Geometry boxes, color pencils, erasers, sharpeners &amp; more.</div></div>
+    <div class="cat-card"><span class="cat-icon">🗂️</span><div class="cat-name">Office Stationery</div><div class="cat-desc">Files, binders, sticky notes, staplers &amp; desk organisers.</div></div>
+    <div class="cat-card"><span class="cat-icon">🖊️</span><div class="cat-name">Markers &amp; Highlighters</div><div class="cat-desc">Whiteboard, permanent &amp; neon highlighters in every color.</div></div>
+    <div class="cat-card"><span class="cat-icon">✂️</span><div class="cat-name">Craft &amp; DIY</div><div class="cat-desc">Scrapbooking, washi tape, stickers, stamps &amp; glue.</div></div>
+    <div class="cat-card"><span class="cat-icon">📐</span><div class="cat-name">Geometry &amp; Math</div><div class="cat-desc">Geometry boxes, compasses, set squares, protractors &amp; rulers.</div></div>
   </div>
 </section>
 
-<!-- FEATURED PRODUCTS -->
-<section class="products" id="products">
-  <div class="products-header">
-    <div>
-      <span class="section-label">What We Carry</span>
-      <h2 class="section-title">Our <em>Featured</em> Products</h2>
-    </div>
-  </div>
+<!-- PRODUCTS -->
+<section id="products">
+  <p class="section-label">What We Carry</p>
+  <h2 class="section-title">Our <em>Featured</em> Products</h2>
+  <p class="section-sub">Top brands, honest pricing — for students, artists and offices alike.</p>
   <div class="products-grid">
-
     <div class="product-card">
-      <div class="product-img">📓<div class="product-badge-tag">School</div></div>
-      <div class="product-body">
-        <p class="product-name">Classmate &amp; Navneet Notebooks</p>
-        <p class="product-sub">Single line, four line &amp; blank — all sizes. India's most trusted notebook brands, available in bulk.</p>
-        <a href="#contact" class="enquire-link">Enquire for Price →</a>
-      </div>
+      <div class="product-card-top"><span class="product-badge">School</span><span class="product-icon">📓</span><div class="product-name">Classmate &amp; Navneet Notebooks</div><div class="product-category">Notebooks</div></div>
+      <div class="product-card-body"><p class="product-desc">Single line, four line &amp; blank — all sizes. India's most trusted notebook brands, available in bulk.</p><a href="#contact" class="btn-enquire">Enquire for Price →</a></div>
     </div>
-
     <div class="product-card">
-      <div class="product-img">✒️<div class="product-badge-tag gold">Popular</div></div>
-      <div class="product-body">
-        <p class="product-name">Reynolds &amp; Cello Pen Sets</p>
-        <p class="product-sub">Smooth ballpoint &amp; gel pens in bulk packs. All tip sizes and colors available.</p>
-        <a href="#contact" class="enquire-link">Enquire for Price →</a>
-      </div>
+      <div class="product-card-top"><span class="product-badge">Popular</span><span class="product-icon">✒️</span><div class="product-name">Reynolds &amp; Cello Pen Sets</div><div class="product-category">Pens &amp; Pencils</div></div>
+      <div class="product-card-body"><p class="product-desc">Smooth ballpoint &amp; gel pens in bulk packs. All tip sizes and colors available.</p><a href="#contact" class="btn-enquire">Enquire for Price →</a></div>
     </div>
-
     <div class="product-card">
-      <div class="product-img">🎨<div class="product-badge-tag">Art</div></div>
-      <div class="product-body">
-        <p class="product-name">Camlin Watercolor &amp; Art Kits</p>
-        <p class="product-sub">12 &amp; 24 shade sets, poster colors, brushes &amp; sketch pads for students and artists.</p>
-        <a href="#contact" class="enquire-link">Enquire for Price →</a>
-      </div>
+      <div class="product-card-top"><span class="product-badge">Art</span><span class="product-icon">🎨</span><div class="product-name">Camlin Watercolor &amp; Art Kits</div><div class="product-category">Art Supplies</div></div>
+      <div class="product-card-body"><p class="product-desc">12 &amp; 24 shade sets, poster colors, brushes &amp; sketch pads for students and artists.</p><a href="#contact" class="btn-enquire">Enquire for Price →</a></div>
     </div>
-
     <div class="product-card">
-      <div class="product-img">📐<div class="product-badge-tag">Exam</div></div>
-      <div class="product-body">
-        <p class="product-name">Geometry Box Sets</p>
-        <p class="product-sub">Apsara, Staedtler &amp; Camlin geometry boxes — full metal &amp; plastic sets, all grades.</p>
-        <a href="#contact" class="enquire-link">Enquire for Price →</a>
-      </div>
+      <div class="product-card-top"><span class="product-badge">Exam</span><span class="product-icon">📐</span><div class="product-name">Geometry Box Sets</div><div class="product-category">Geometry &amp; Math</div></div>
+      <div class="product-card-body"><p class="product-desc">Apsara, Staedtler &amp; Camlin geometry boxes — full metal &amp; plastic sets, all grades.</p><a href="#contact" class="btn-enquire">Enquire for Price →</a></div>
     </div>
-
     <div class="product-card">
-      <div class="product-img">🖊️<div class="product-badge-tag gold">Office</div></div>
-      <div class="product-body">
-        <p class="product-name">Markers &amp; Highlighters</p>
-        <p class="product-sub">Camlin, Luxor, Artline — whiteboard, OHP and permanent markers in all colors.</p>
-        <a href="#contact" class="enquire-link">Enquire for Price →</a>
-      </div>
+      <div class="product-card-top"><span class="product-badge">Office</span><span class="product-icon">🖊️</span><div class="product-name">Markers &amp; Highlighters</div><div class="product-category">Office Stationery</div></div>
+      <div class="product-card-body"><p class="product-desc">Camlin, Luxor, Artline — whiteboard, OHP and permanent markers in all colors.</p><a href="#contact" class="btn-enquire">Enquire for Price →</a></div>
     </div>
-
     <div class="product-card">
-      <div class="product-img">🗂️<div class="product-badge-tag">Office</div></div>
-      <div class="product-body">
-        <p class="product-name">Files, Folders &amp; Binders</p>
-        <p class="product-sub">Display files, ring binders, document wallets, project files &amp; envelopes — all sizes.</p>
-        <a href="#contact" class="enquire-link">Enquire for Price →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="why-inner">
-    <div class="why-content">
-      <span class="section-label">Why Choose Us</span>
-      <h2 class="section-title">More Than Just a<br><em>Stationery Store</em></h2>
-      <p class="section-desc">We believe great stationery inspires great work. Every product we carry is handpicked for quality, value and the joy it brings to your desk.</p>
-      <ul class="why-list">
-        <li class="why-item">
-          <div class="why-icon">🏆</div>
-          <div><p class="why-item-title">Handpicked Quality</p><p class="why-item-desc">Every product is tested and selected by stationery enthusiasts who genuinely care.</p></div>
-        </li>
-        <li class="why-item">
-          <div class="why-icon">📦</div>
-          <div><p class="why-item-title">Retail &amp; Wholesale</p><p class="why-item-desc">Special bulk pricing for schools, colleges, offices and retailers. Minimum order quantities apply.</p></div>
-        </li>
-        <li class="why-item">
-          <div class="why-icon">💰</div>
-          <div><p class="why-item-title">Best Price Guarantee</p><p class="why-item-desc">Competitive pricing on all major brands — because quality stationery should be accessible.</p></div>
-        </li>
-        <li class="why-item">
-          <div class="why-icon">🎁</div>
-          <div><p class="why-item-title">Custom Bulk Orders</p><p class="why-item-desc">We curate bulk stationery packs for schools, offices and events. Just tell us what you need.</p></div>
-        </li>
-      </ul>
-    </div>
-    <div class="why-stats">
-      <div class="stat-box"><p class="stat-num">500+</p><p class="stat-label">Products<br>in Stock</p></div>
-      <div class="stat-box"><p class="stat-num">100%</p><p class="stat-label">Quality<br>Guarantee</p></div>
-      <div class="stat-box"><p class="stat-num">Both</p><p class="stat-label">Retail &amp;<br>Wholesale</p></div>
-      <div class="stat-box"><p class="stat-num">★4.9</p><p class="stat-label">Customer<br>Rating</p></div>
+      <div class="product-card-top"><span class="product-badge">Office</span><span class="product-icon">🗂️</span><div class="product-name">Files, Folders &amp; Binders</div><div class="product-category">Office Stationery</div></div>
+      <div class="product-card-body"><p class="product-desc">Display files, ring binders, document wallets, project files &amp; envelopes — all sizes.</p><a href="#contact" class="btn-enquire">Enquire for Price →</a></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT TAGLINE STRIP -->
-<div class="about-strip" id="about">
-  <span class="section-label">Our Promise</span>
-  <h2 class="section-title">স্কুল, কলেজ, অফিস — <em>সবার জন্য</em></h2>
-  <p class="bengali-tagline">স্কুল, কলেজ, অফিসের সব রকম স্টেশনারি দ্রব্য retail এবং wholesale রেট-এ পাওয়া যায়।<br>Founded with love for learning. Est. 2026.</p>
-  <div class="about-chips">
-    <span class="chip">All Major Brands</span>
-    <span class="chip">Retail &amp; Wholesale</span>
-    <span class="chip">School Supplies</span>
-    <span class="chip">Art Materials</span>
-    <span class="chip">Office Stationery</span>
-    <span class="chip">Bulk Orders</span>
+<!-- WHY US -->
+<section id="why">
+  <p class="section-label">Why Choose Us</p>
+  <h2 class="section-title">More Than Just a <em>Stationery Store</em></h2>
+  <p class="section-sub">We believe great stationery inspires great work. Every product is handpicked for quality, value and the joy it brings to your desk.</p>
+  <div class="why-grid">
+    <div class="why-item"><span class="why-icon">🏆</span><div class="why-title">Handpicked Quality</div><p class="why-desc">Every product is tested and selected by stationery enthusiasts who genuinely care about what goes on your desk.</p></div>
+    <div class="why-item"><span class="why-icon">📦</span><div class="why-title">Retail &amp; Wholesale</div><p class="why-desc">Special bulk pricing for schools, colleges, offices and retailers. Minimum order quantities apply.</p></div>
+    <div class="why-item"><span class="why-icon">💰</span><div class="why-title">Best Price Guarantee</div><p class="why-desc">Competitive pricing on all major brands — because quality stationery should be accessible to everyone.</p></div>
+    <div class="why-item"><span class="why-icon">🎁</span><div class="why-title">Custom Bulk Orders</div><p class="why-desc">We curate bulk stationery packs for schools, offices and events. Just tell us what you need.</p></div>
   </div>
-</div>
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Products in Stock</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Quality Guarantee</span></div>
+    <div class="stat-item"><span class="stat-num">Both</span><span class="stat-label">Retail &amp; Wholesale</span></div>
+    <div class="stat-item"><span class="stat-num">★4.9</span><span class="stat-label">Customer Rating</span></div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section id="promise">
+  <div class="promise-inner">
+    <div class="promise-left">
+      <p class="section-label">Our Promise</p>
+      <h2 class="section-title">স্কুল, কলেজ, অফিস —<br/><em>সবার জন্য</em></h2>
+      <p class="promise-bengali">স্কুল, কলেজ, অফিসের সব রকম স্টেশনারি দ্রব্য retail এবং wholesale রেট-এ পাওয়া যায়।<br/>Founded with love for learning. Est. 2026.</p>
+      <div class="promise-tags">
+        <span class="promise-tag">All Major Brands</span>
+        <span class="promise-tag">Retail &amp; Wholesale</span>
+        <span class="promise-tag">School Supplies</span>
+        <span class="promise-tag">Art Materials</span>
+        <span class="promise-tag">Office Stationery</span>
+        <span class="promise-tag">Bulk Orders</span>
+      </div>
+    </div>
+    <div class="promise-right">
+      <div class="promise-card"><span class="promise-card-icon">📓</span><div class="promise-card-text">Notebooks</div></div>
+      <div class="promise-card"><span class="promise-card-icon">✒️</span><div class="promise-card-text">Writing</div></div>
+      <div class="promise-card"><span class="promise-card-icon">🎨</span><div class="promise-card-text">Art</div></div>
+      <div class="promise-card"><span class="promise-card-icon">🎒</span><div class="promise-card-text">School</div></div>
+      <div class="promise-card"><span class="promise-card-icon">🗂️</span><div class="promise-card-text">Office</div></div>
+      <div class="promise-card"><span class="promise-card-icon">📦</span><div class="promise-card-text">Wholesale</div></div>
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonials">
-  <div class="testimonials-header">
-    <span class="section-label">Customer Love</span>
-    <h2 class="section-title">What Our <em>Customers</em> Say</h2>
-    <p class="section-desc">Real words from real people who love their stationery as much as we do.</p>
-  </div>
+<section id="testimonials">
+  <p class="section-label">Customer Love</p>
+  <h2 class="section-title">What Our <em>Customers</em> Say</h2>
+  <p class="section-sub">Real words from real people who love their stationery as much as we do.</p>
   <div class="testi-grid">
     <div class="testi-card">
-      <div class="testi-quote">"</div>
+      <span class="testi-quote">"</span>
       <p class="testi-text">The hardbound journal I bought is absolutely stunning. The paper quality is exceptional — no bleed-through even with my fountain pen. Highly recommend!</p>
       <div class="testi-stars">★★★★★</div>
-      <div class="testi-author">
-        <div class="testi-avatar">P</div>
-        <div><p class="testi-name">Priya Sharma</p><p class="testi-role">Student · Kolkata</p></div>
-      </div>
+      <div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya Sharma</div><div class="testi-role">Student · Kolkata</div></div></div>
     </div>
     <div class="testi-card">
-      <div class="testi-quote">"</div>
+      <span class="testi-quote">"</span>
       <p class="testi-text">Ordered a bulk lot for our office. The pricing was very fair and quality of every item was spot on. Will be placing regular orders from here.</p>
       <div class="testi-stars">★★★★★</div>
-      <div class="testi-author">
-        <div class="testi-avatar">R</div>
-        <div><p class="testi-name">Rahul Dey</p><p class="testi-role">Office Manager · Howrah</p></div>
-      </div>
+      <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rahul Dey</div><div class="testi-role">Office Manager · Howrah</div></div></div>
     </div>
     <div class="testi-card">
-      <div class="testi-quote">"</div>
-      <p class="testi-text">Best stationery shop I've found! The watercolor kit is perfect for beginners. Great prices and the quality is just as good — if not better — than anywhere else.</p>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">Best stationery shop I've found! The watercolor kit is perfect for beginners. Great prices and quality just as good — if not better — than anywhere else.</p>
       <div class="testi-stars">★★★★★</div>
-      <div class="testi-author">
-        <div class="testi-avatar">A</div>
-        <div><p class="testi-name">Ananya Bose</p><p class="testi-role">Artist · Kolkata</p></div>
-      </div>
+      <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Ananya Bose</div><div class="testi-role">Artist · Kolkata</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
+<section id="contact">
+  <p class="section-label">Get in Touch</p>
+  <h2 class="section-title">Visit Us or <em>Enquire</em> Today</h2>
+  <p class="section-sub">Have a bulk order, school requirement, or just want to say hello? We're always happy to help.</p>
+  <div class="contact-grid">
     <div>
-      <span class="section-label">Get in Touch</span>
-      <h2 class="section-title">Visit Us or <em>Enquire</em> Today</h2>
-      <p class="section-desc contact-intro">Have a bulk order, school requirement, or just want to say hello? We're always happy to help.</p>
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div><p class="contact-label">Visit Us</p><p class="contact-val">FC-68 Narayantala West, Baguiati<br>Kolkata — 700059</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div><p class="contact-label">Call Us</p><p class="contact-val">+91 98755 37992<br>Mon–Sat: 9am – 8pm</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">⏰</div>
-          <div><p class="contact-label">Store Hours</p><p class="contact-val">Monday – Saturday: 9:00am – 8:00pm<br>Sunday: 10:00am – 6:00pm</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📦</div>
-          <div><p class="contact-label">Bulk &amp; Wholesale</p><p class="contact-val">School, college &amp; office bulk orders welcome<br>Special pricing available</p></div>
-        </div>
+      <div class="contact-info-cards">
+        <div class="contact-card"><span class="contact-card-icon">📍</span><div><div class="contact-card-label">Visit Us</div><div class="contact-card-val">FC-68 Narayantala West, Baguiati<br/>Kolkata — 700059</div></div></div>
+        <div class="contact-card"><span class="contact-card-icon">📞</span><div><div class="contact-card-label">Call Us</div><div class="contact-card-val">+91 98755 37992</div><div class="contact-card-sub">Mon–Sat: 9am – 8pm</div></div></div>
+        <div class="contact-card"><span class="contact-card-icon">⏰</span><div><div class="contact-card-label">Store Hours</div><div class="contact-card-val">Monday – Saturday: 9:00am – 8:00pm</div><div class="contact-card-sub">Sunday: 10:00am – 6:00pm</div></div></div>
+        <div class="contact-card"><span class="contact-card-icon">📦</span><div><div class="contact-card-label">Bulk &amp; Wholesale</div><div class="contact-card-val">School, college &amp; office bulk orders welcome</div><div class="contact-card-sub">Special pricing available</div></div></div>
       </div>
-      <a href="https://wa.me/919875537992?text=Hi%2C%20I%20want%20to%20enquire%20about%20stationery." class="whatsapp-btn">💬 &nbsp;WhatsApp Us Now</a>
+      <a href="https://wa.me/919875537992?text=Hi%2C%20I%20want%20to%20enquire%20about%20stationery." class="whatsapp-btn" target="_blank" rel="noopener">💬&nbsp; WhatsApp Us Now</a>
     </div>
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <div class="form-field">
-          <label>Your Name</label>
-          <input type="text" placeholder="Full name">
+    <div class="contact-form">
+      <div class="form-title">Send an Enquiry</div>
+      <form onsubmit="handleForm(event)">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="e.g. Rahul Sharma" required/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98XXX XXXXX" required/></div>
+        <div class="form-group"><label>I am a</label>
+          <select>
+            <option value="">Select your type</option>
+            <option>School / College Student</option>
+            <option>Teacher / School</option>
+            <option>Office / Corporate</option>
+            <option>Shop / Retailer</option>
+            <option>Artist / Individual</option>
+            <option>Other</option>
+          </select>
         </div>
-        <div class="form-field">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 98755 37992">
-        </div>
-      </div>
-      <div class="form-field">
-        <label>I am a</label>
-        <select>
-          <option>School / College Student</option>
-          <option>Teacher / School</option>
-          <option>Office / Corporate</option>
-          <option>Shop / Retailer</option>
-          <option>Artist / Individual</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label>What are you looking for?</label>
-        <textarea rows="4" placeholder="Tell us what products or quantities you need..."></textarea>
-      </div>
-      <button type="submit" class="btn-primary btn-full">Send Enquiry →</button>
-    </form>
+        <div class="form-group"><label>What are you looking for?</label><textarea placeholder="Tell us what you need — notebooks, pens, bulk order, art supplies..."></textarea></div>
+        <button type="submit" class="form-submit">Send Enquiry →</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -356,10 +481,10 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="The Stationery Hub">
-      <p class="footer-brand-name">The Stationery Hub</p>
-      <p class="footer-tagline-text">Est. 2026</p>
-      <p class="footer-desc">স্কুল, কলেজ, অফিসের সব রকম স্টেশনারি দ্রব্য retail এবং wholesale রেট-এ পাওয়া যায়।</p>
+      <img src="https://anweshatitly.github.io/thestationeryhub1/images/logo.png" alt="The Stationery Hub"/>
+      <div class="footer-brand-name">The Stationery Hub</div>
+      <div class="footer-brand-est">Est. 2026</div>
+      <p class="footer-brand-desc">স্কুল, কলেজ, অফিসের সব রকম স্টেশনারি দ্রব্য retail এবং wholesale রেট-এ পাওয়া যায়।</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -375,7 +500,7 @@
     <div class="footer-col">
       <h4>Information</h4>
       <ul>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#why">About Us</a></li>
         <li><a href="#why">Why Choose Us</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Bulk Orders</a></li>
@@ -384,25 +509,38 @@
     </div>
     <div class="footer-col">
       <h4>Connect</h4>
+      <div class="footer-social">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="Instagram">ig</a>
+        <a href="https://wa.me/919875537992" title="WhatsApp">wa</a>
+      </div>
       <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">WhatsApp</a></li>
+        <li><a href="https://wa.me/919875537992?text=Hi%2C%20I%20want%20to%20enquire%20about%20stationery." target="_blank">WhatsApp Us</a></li>
+        <li><a href="tel:+919875537992">+91 98755 37992</a></li>
         <li><a href="#contact">Send Enquiry</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2026 The Stationery Hub. All rights reserved. Made with ✦ for stationery lovers.</p>
-    <div class="footer-socials">
-      <a href="#" class="social-btn">f</a>
-      <a href="#" class="social-btn">in</a>
-      <a href="#" class="social-btn">◎</a>
-      <a href="#" class="social-btn">💬</a>
-    </div>
+    <span>© 2026 The Stationery Hub. All rights reserved.</span>
+    <span>Made with <span class="heart">✦</span> for stationery lovers · Baguiati, Kolkata 700059</span>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ Enquiry Sent!';
+  btn.style.background = '#5a6e4e';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.textContent = 'Send Enquiry →';
+    btn.style.background = '';
+    btn.style.color = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
 </body>
 </html>
